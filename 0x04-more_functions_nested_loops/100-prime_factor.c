@@ -1,24 +1,36 @@
+#include <math.h>
 #include <stdio.h>
+#include <assert.h>
 
 /**
- * main - finds and prints the largest prime factor.
+ * main - This program prints the largest
+ * prime factor of the number `612852475143`
+ * followed by a new line
  *
- * Return: Always 0.
+ * Return: Always 0
  */
 int main(void)
 {
-	long int i, p, fp = 612852475143;
+	int lrgst;		   /* largest prime factor */
+	unsigned long num; /* the given number */
+	int pfactor;	   /* prime factor */
 
-	i = 2;
-	while (i <= 612852475143 && fp > 1)
+	num = 612852475143;
+	lrgst = 2;
+
+	for (pfactor = 2; num % pfactor == 0;)
+		num = num / pfactor;
+	/* after the above step, num must be odd */
+	assert(num % 2 == 1);
+
+	for (pfactor = 3; pfactor <= sqrt(num); pfactor = pfactor + 2)
 	{
-		p = i;
-		if ((fp % p) == 0)
-			fp = fp / p;
-		else
-			i++;
+		while (num % pfactor == 0)
+			num = num / pfactor;
+		lrgst = pfactor;
 	}
-	printf("%ld\n", p);
-
+	if (num > 2)
+		lrgst = num;
+	printf("%d\n", lrgst);
 	return (0);
-
+}

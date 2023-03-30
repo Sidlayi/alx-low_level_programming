@@ -1,4 +1,4 @@
-#ifndef MIN_H
+ifndef MIN_H
 #define MIN_H
 
 #include <stdio.h>

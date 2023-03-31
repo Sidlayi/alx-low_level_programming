@@ -1,21 +1,13 @@
-#include "main.h"
+#include <unistd.h>
 
 /**
- * print_number - Prints an integer.
- * @n: n is integer to be printed.
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
-void print_number(int n)
+int _putchar(char c)
 {
-	unsigned int number = n;
-
-	if (n < 0)
-	{
-		_putchar('-');
-		number = -number;
-	}
-
-	if ((number / 10) > 0)
-		print_number(number / 10);
-
-	_putchar((number % 10) + '0');
+	return (write(1, &c, 1));
 }

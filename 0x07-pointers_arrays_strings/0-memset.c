@@ -5,9 +5,9 @@
  * @s: first value
  * @b: second value
  * @n: third value
- *
  * Return: char
  */
+
 char *_memset(char *s, char b, unsigned int n)
 {
 	unsigned int i;

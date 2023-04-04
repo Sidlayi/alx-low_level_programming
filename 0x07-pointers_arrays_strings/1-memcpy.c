@@ -2,19 +2,17 @@
 
 /**
  * _memcpy - function that copies memory area
- * @dest: the address of memory to print
- * @src: second value
- * @n: third value
+ * @dest: pointer to destination buffer
+ * @src: pointer to source buffer
+ * @n: number of bytes to copy
  *
- * Return: char with reusult of memset
+ * Return: pointer to destination buffer
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int i;
-
-	for (i = 0; i < n; i++)
+	while (n--)
 	{
-		dest[i] = src[i];
+		*(dest + n) = *(src + n);
 	}
 	return (dest);
 }

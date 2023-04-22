@@ -48,7 +48,7 @@ while (format != NULL && format[i] != '\0')
 
 		printf("%s", sep);
 	}
-	i++;
 }
-va_end(args), printf("\n");
+	i++;
+        va_end(args), printf("\n");
 }

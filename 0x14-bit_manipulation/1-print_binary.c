@@ -23,7 +23,7 @@ void print_binary(unsigned long int n)
 		i--;
 
 	if (!n)
-		_putchar('0');
+	_putchar('0');
 
 	while (Sbit)
 	{

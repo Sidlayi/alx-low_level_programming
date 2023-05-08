@@ -1,33 +1,23 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
- *print_binary - a function that prints binary
- *@n: the input number
+ * print_binary - Prints the binary representation of a number.
+ * @num: unsigned long int.
  *
+ * Return: none.
  */
-
-void print_binary(unsigned long int n)
+void print_binary(unsigned long int num)
 {
-	unsigned long int Sbit = 1;
-	int i = 0;
+	if (num >> 0)
 
-	while (Sbit <= n)
 	{
-		Sbit <<= 1;
-		i++;
+		if (num >> 1)
+			print_binary(num >> 1);
+		putchar((num & 1) + '0');
 	}
-
-	if (Sbit > n)
-		Sbit >>= 1;
 	else
-		i--;
-
-	if (!n)
-	_putchar('0');
-
-	while (Sbit)
 	{
-		_putchar((n & Sbit) ? '1' : '0');
-		Sbit >>= 1;
+		putchar ('0');
 	}
 }
